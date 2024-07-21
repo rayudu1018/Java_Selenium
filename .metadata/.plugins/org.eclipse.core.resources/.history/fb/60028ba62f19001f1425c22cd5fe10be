@@ -1,0 +1,17 @@
+package Java;
+
+public class NoOf_Is_name {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String name = "My name is";
+		
+		for(int i=0;i<=name.length();i++) {
+		Char c = name.charAt(i);
+		
+		}
+
+	}
+
+}

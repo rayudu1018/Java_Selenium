@@ -1,0 +1,104 @@
+package sample1;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class test123 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ChromeDriver driver = new ChromeDriver();//WE WILL OPENING CROME
+		
+		driver.get("https://www.instagram.com/"); //IT WILL OPEN THE INSTAGRAM URL
+		
+		//driver.findElement(By.xpath("//input[@aria-label='Phone number, username, or email']")).sendKeys("rrrr");
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		//driver.findElement(By.className("_ab32")).sendKeys("rr");
+	 //driver.findElement(By.name("Phone number, username, or email")).sendKeys("rayudu1018@gmail.com");
+		//driver.findElement(By.name("password")).sendKeys("rayudu1018@gmail.com");
+	WebElement usernameField = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@aria-label='Phone number, username, or email']")));
+    WebElement userpasswordField = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@aria-label='Password']")));
+		   
+		   String username = "shivashankarvaraprasad123@gmail.com";
+	        String password = "Shiva@123";
+		   
+		  usernameField.sendKeys("shivashankarvaraprasad123@gmail.com");
+		   userpasswordField.sendKeys("Shiva@123");
+		   
+		   if(username.equals("shivashankarvaraprasad123@gmail.com") && password.equals("Shiva@123") ){
+			   WebElement loginButton = wait.until(
+	                    ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@type='submit']"))); 
+			   loginButton.click();
+			   
+			   System.out.println("test passed");
+		   }else {
+			   System.out.println("test failed");
+		   }
+		   
+		   WebElement notNowButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(), 'Not now')]")));
+          
+		   notNowButton.click();
+		   
+		   WebElement NowButton = driver.findElement(By.className("_a9_1"));
+		   NowButton.click(); 
+		   
+		   String act_title = driver.getTitle(); 
+		   
+		  // System.out.println(act_title);
+		   
+		   if (act_title.equals("Instagram")){
+				
+				System.out.println("Test is passed");
+				
+			}
+			else {
+				
+				System.out.println("Test is failed");
+				
+			}
+		   
+      // for serching the name in the serchbar
+		   
+		   WebElement svgElement = driver.findElement(By.cssSelector("svg[aria-label='Search']"));
+
+		   svgElement.click();
+		   
+		   WebElement inputElement = driver.findElement(By.cssSelector("input[aria-label='Search input']"));
+		   inputElement.sendKeys("rayudu1018");
+		   inputElement.sendKeys(Keys.RETURN);
+		   
+		   search_term = 'desired_search_term';
+		   
+		   search_bar = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@placeholder='Search']")));
+				   search_bar.send_keys(search_term);
+				   
+				   first_result = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//div[@role='none']/a")))
+						   first_result.click()
+		   
+		   //WebElement titleElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//title[text()='Save']")));
+		   
+		   //titleElement.clear();
+		   
+		  // WebElement parentDiv = driver.findElement(By.xpath("//div[@class='x1i10hfl x972fbf xcfux6l x1qhh985 xm0m39n x9f619 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz x6s0dn4 xjbqb8w x1ejq31n xd10rxx x1sy0etr x17r0tee x1ypdohk x78zum5 xl56j7k xcdnw81 xexx8yu x4uap5 x18d9i69 xkhd6sd']"));
+
+           // Find the SVG element within the parent div
+          // WebElement svgElement = parentDiv.findElement(By.xpath(".//svg[@aria-label='Save']"));
+
+           // Perform actions on the SVG element, such as clicking
+        
+           
+           //WebElement svgElement = driver.findElement(By.xpath("//div[@class='x1i10hfl x972fbf xcfux6l x1qhh985 xm0m39n x9f619 xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r x16tdsg8 x1hl2dhg xggy1nq x1a2a7pz x6s0dn4 xjbqb8w x1ejq31n xd10rxx x1sy0etr x17r0tee x1ypdohk x78zum5 xl56j7k xcdnw81 xexx8yu x4uap5 x18d9i69 xkhd6sd']//svg[@aria-label='Save']"));
+           //svgElement.click();
+		//driver.close();
+
+	}
+
+}

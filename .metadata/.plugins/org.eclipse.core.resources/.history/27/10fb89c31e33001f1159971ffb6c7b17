@@ -1,0 +1,14 @@
+package Java2;
+
+public class AnimalMainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Animal d = new dog();
+		
+		Animal c = new cat();
+
+	}
+
+}

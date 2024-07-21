@@ -1,0 +1,30 @@
+package Java;
+
+public class names {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		names nn = new names();
+		nn.name();
+
+	}
+	
+	public String name() {
+		
+		String n = "Venkata Rayudu Adapa";
+		
+		String[] b = n.split("");
+		
+		String f = b[0];
+		String e = b[1];
+		String w = b[2].substring(0,1);
+		
+		String totalname = f + " " +e+ " " +w;
+		System.out.println(totalname);
+		
+		
+		return "";
+		
+	}
+
+}

@@ -1,0 +1,24 @@
+package Java;
+
+public class NoOf_Is_name {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String name = "rayudui";
+		int count = 0;
+		System.out.println(name.length());
+		for(int j=1;j<=name.length();j++) {
+		char c = name.charAt(j);
+		
+		 if(c == 'i') {
+			 
+			count ++; 
+		 }
+		
+		}
+		System.out.println(count ++);
+
+	}
+
+}

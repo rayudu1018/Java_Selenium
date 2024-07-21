@@ -1,0 +1,42 @@
+package sample;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class PG1 {
+
+
+    public static void main(String[] args) throws InterruptedException {
+        
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\rayud\\eclipse-workspace\\grp\\src\\test\\resources\\drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+    	
+        String baseUrl = "https://www.opencart.com/index.php?route=cms/demo";
+        String expectedTitle = "Your Store";
+        String actualTitle = driver.getTitle();
+
+        // launch Fire fox and direct it to the Base URL
+        driver.get(baseUrl);
+        driver.findElement(By.linkText("col-sm-6 border-right")).click();
+
+        // get the actual value of the title
+        //actualTitle = driver.getTitle();Thread.sleep(7000);
+        /*
+         * compare the actual title of the page with the expected one and print
+         * the result as "Passed" or "Failed"
+         */
+       
+        //close Fire fox
+        if (baseUrl == "https://www.opencart.com/index.php?route=cms/demo"){
+        	System.out.println("Test Passed!");Thread.sleep(7000);
+        }
+        
+        if (actualTitle.contentEquals(expectedTitle)){
+            System.out.println("Test Passed!");
+        } else {
+            System.out.println("Test Failed");
+        }
+        driver.close();
+    }
+
+}

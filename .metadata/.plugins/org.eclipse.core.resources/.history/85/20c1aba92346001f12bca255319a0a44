@@ -1,0 +1,32 @@
+package Java3;
+
+import java.util.Scanner;
+
+public class Split {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Enter the input : ");
+		
+		String name = scan.nextLine();
+		
+		String[] stringArray = new String[name.length()];
+		
+		for(int i=0;i<name.length();i++) {
+			
+			if(name.charAt(i) == ' ') {
+				
+				stringArray[i] = String.valueOf(name.charAt(i));
+				
+			}
+			
+		}
+		
+		
+
+	}
+
+}

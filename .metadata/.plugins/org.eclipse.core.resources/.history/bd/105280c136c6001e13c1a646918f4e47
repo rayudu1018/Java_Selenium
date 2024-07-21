@@ -1,0 +1,55 @@
+package sample;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class PG1 {
+
+
+    public static void main(String[] args) throws InterruptedException {
+        
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\rayud\\eclipse-workspace\\grp\\src\\test\\resources\\drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+    	
+        String baseUrl = "https://demo.opencart.com";
+          String expectedTitle = "Your Store";
+        String actualTitle = driver.getTitle();
+
+        // launch Fire fox and direct it to the Base URL
+        driver.get(baseUrl);
+       
+        // get the actual value of the title
+        //actualTitle = driver.getTitle();Thread.sleep(7000);
+        /*
+         * compare the actual title of the page with the expected one and print
+         * the result as "Passed" or "Failed"
+         */
+       
+        //close Fire fox
+        if (baseUrl == "https://demo.opencart.com"){
+        	System.out.println("Test Passed!");
+        	Thread.sleep(60000);
+        }
+        
+       if (actualTitle.contentEquals(expectedTitle)){
+            System.out.println("Test Passed!");
+        } else {
+            System.out.println("Test Failed");
+        }
+        
+        //driver.findElement(By.xpath("//a[@href='https://demo.opencart.com']")).click();
+        //driver.findElement(By.linkText("https://demo.opencart.com")).click();
+        
+        //driver.findElement(By.className("nav-item dropdown"));
+        
+        /*driver.findElement(By.xpath("//*[@id='narbar-menu']/ul/li[1]/a")).click();
+        
+        driver.findElement(By.xpath("//*[@id='narbar-menu']/ul/li[1]/div/div/ul/li[2]")).click();
+         
+        if (baseUrl == "https://demo.opencart.com"){
+        	System.out.println("Test Passed!");Thread.sleep(7000);
+        }
+      //  driver.close();*/
+    }
+
+}

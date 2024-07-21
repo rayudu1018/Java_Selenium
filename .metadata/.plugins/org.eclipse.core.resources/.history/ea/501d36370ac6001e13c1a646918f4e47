@@ -1,0 +1,28 @@
+package sample;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class sample2 {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\rayud\\eclipse-workspace\\grp\\src\\test\\resources\\drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		String baseUrl = "https://demo.opencart.com/";
+		
+		 driver.get(baseUrl);
+		 
+	        if (baseUrl == "https://demo.opencart.com/"){
+	        	System.out.println("Test Passed!");Thread.sleep(9000);
+	        }
+	        
+	        
+	        driver.findElement(By.className("nav-item dropdown")).click();
+		 driver.close();
+
+	}
+
+}

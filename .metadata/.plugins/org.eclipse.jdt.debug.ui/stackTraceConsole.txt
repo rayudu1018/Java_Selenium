@@ -1,0 +1,2 @@
+            int mid = length / 2;
+            System.out.println("The length of the name '" + name.charAt(mid - 2) );

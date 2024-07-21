@@ -1,0 +1,21 @@
+package Java;
+
+public class SecondHighestNumber {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int[] num = {1,2,3,4,5,6,7};
+		
+		for(int i = 0;i<num.length;i++) {
+			
+		int num1 = num[0];
+		
+		if (i < num1);
+		
+			
+		}
+
+	}
+
+}
